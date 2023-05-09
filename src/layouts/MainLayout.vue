@@ -5,7 +5,7 @@
     style="height: 100vh"
     class="shadow-2 rounded-borders"
   >
-    <q-header class="bg-transparent px-4">
+    <q-header class="bg-white px-4">
       <q-toolbar>
         <q-avatar>
           <img src="../assets/logo.svg" />
@@ -15,7 +15,7 @@
           >Url Shortcut</q-toolbar-title
         >
 
-        <q-tabs no-caps class="bg-transparent text-blue-500">
+        <q-tabs v-if="!isMobile" no-caps class="bg-transparent text-blue-500">
           <q-route-tab
             v-for="item in menu"
             :key="item.id"
@@ -28,6 +28,19 @@
       </q-toolbar>
     </q-header>
 
+    <q-footer class="bg-white" elevated>
+      <q-tabs v-if="isMobile" no-caps class="bg-transparent text-blue-500">
+        <q-route-tab
+          v-for="item in menu"
+          :key="item.id"
+          :to="{ name: item.to }"
+          replace
+          :label="item.label"
+          class="uppercase"
+          active-class="bg-blue-5 text-white"
+        />
+      </q-tabs>
+    </q-footer>
     <q-page-container>
       <router-view :key="$route.path" />
     </q-page-container>
@@ -37,6 +50,7 @@
 <script setup>
 import { useQuasar } from "quasar";
 import { ref, computed } from "vue";
+import useScreenView from "src/composables/useScreenView";
 
 const menu = ref([
   {
@@ -62,6 +76,9 @@ const menu = ref([
 ]);
 
 const $q = useQuasar();
+const isMobile = computed(() => {
+  return useScreenView();
+});
 
 const leftDrawerOpen = ref(false);
 const OpenDrawerAndIsMobile = computed({

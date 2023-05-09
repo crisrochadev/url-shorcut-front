@@ -14,6 +14,7 @@ export const useLinks = defineStore("links", {
     },
     filter: "",
     orderBy: "desc",
+    typeLinkList: "active",
   }),
   // getters: {
   //   getLinks: async (state) => {
@@ -30,11 +31,16 @@ export const useLinks = defineStore("links", {
       await this.getAllLinks();
     },
     async getAllLinks() {
+      this.loading = true;
       let query = `?page=${this.pagination.page}&perPage=${this.pagination.rowsPerPage}&orderBy=${this.orderBy}`;
       if (this.filter !== "") query = query + `&filter=${this.filter}`;
 
+      let endpoint =
+        this.typeLinkList === "active"
+          ? `/links${query}`
+          : `/disabled/${query}`;
       const res = await api
-        .get(`/links${query}`)
+        .get(endpoint)
         .then((res) => res.data)
         .catch((error) => error);
       if (res.success) {
