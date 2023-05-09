@@ -23,11 +23,6 @@ const routes = [
         name: "about",
         component: () => import("pages/AboutPage.vue"),
       },
-      {
-        path: "error",
-        name: "error",
-        component: () => import("pages/LinkRedirectErrorPage.vue"),
-      },
     ],
   },
   {
