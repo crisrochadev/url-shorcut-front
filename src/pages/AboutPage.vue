@@ -50,19 +50,19 @@
           class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
         >
           Criar um novo link -
-          <code class="ml-1">/create-link</code>
+          <code class="ml-1">/new</code>
         </li>
         <li
           class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
         >
           Listagem dos links -
-          <code class="ml-1">/link-list</code>
+          <code class="ml-1">/links</code>
         </li>
         <li
           class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
         >
           Documentação -
-          <code class="ml-1">/documentation</code>
+          <code class="ml-1">/about</code>
         </li>
         <li
           class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
