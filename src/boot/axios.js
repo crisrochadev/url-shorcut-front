@@ -18,8 +18,8 @@ const getContext = () => {
 };
 
 let URL_CTX_API = getContext();
-
-let url = window.location.host.startsWith("localhost");
+console.log(location);
+console.log(URL_CTX_API);
 const api = axios.create({
   baseURL: URL_CTX_API,
 });
