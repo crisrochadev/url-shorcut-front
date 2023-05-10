@@ -269,10 +269,13 @@ onMounted(async () => {
 });
 
 function mapRows() {
-  return store.links.map((link) => ({
-    ...link,
-    link: window.location.origin + "/" + link.slug,
-  }));
+  return store.links.map((link) => {
+    link["expired"] = parseInt(link.expired) === 0 ? false : true;
+    return {
+      ...link,
+      link: window.location.origin + "/" + link.slug,
+    };
+  });
 }
 
 async function reactivateLink(id) {
