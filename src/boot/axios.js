@@ -7,7 +7,7 @@ import axios from "axios";
 // good idea to move this instance creation inside of the
 // "export default () => {}" function below (which runs individually
 // for each client)
-
+let context = window.location.hostname;
 const getContext = () => {
   console.log("DEBUG LOGIN", process.env.VUE_APP_TENANT_NAME);
   if (context.indexOf("localhost") >= 0) {
