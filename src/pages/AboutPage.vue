@@ -8,7 +8,7 @@
       </q-card-section>
       <h2 class="uppercase text-lg text-blue-500">
         <q-icon name="store" class="mr-4" />
-        <span>Fron-End</span>
+        <span>Front-End</span>
       </h2>
       <hr />
       <p
