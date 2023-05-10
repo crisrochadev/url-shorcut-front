@@ -7,11 +7,21 @@ import axios from "axios";
 // good idea to move this instance creation inside of the
 // "export default () => {}" function below (which runs individually
 // for each client)
-let dev = window.location.host.startsWith("localhost");
+
+const getContext = () => {
+  console.log("DEBUG LOGIN", process.env.VUE_APP_TENANT_NAME);
+  if (context.indexOf("localhost") >= 0) {
+    return process.env.VUE_APP_API_URL_DEV;
+  } else {
+    return process.env.VUE_APP_API_URL_PROD;
+  }
+};
+
+let URL_CTX_API = getContext();
+
+let url = window.location.host.startsWith("localhost");
 const api = axios.create({
-  baseURL: dev
-    ? process.env.VUE_APP_API_URL_DEV
-    : process.env.VUE_APP_API_URL_PROD,
+  baseURL: URL_CTX_API,
 });
 
 export default boot(({ app }) => {
