@@ -38,7 +38,7 @@ export const useLinks = defineStore("links", {
       let endpoint =
         this.typeLinkList === "active"
           ? `/links${query}`
-          : `/disabled/${query}`;
+          : `/links/disabled${query}`;
       const res = await api
         .get(endpoint)
         .then((res) => res.data)
@@ -100,7 +100,7 @@ export const useLinks = defineStore("links", {
     },
     async getLinkBySlug(slug) {
       const res = await api
-        .get("/links/" + slug)
+        .get("/links/slug/" + slug)
         .then((res) => res.data)
         .catch((error) => error);
 

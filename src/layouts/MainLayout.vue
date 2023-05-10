@@ -28,7 +28,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-footer class="bg-white" elevated>
+    <q-footer class="bg-white fixed bottom-0" elevated>
       <q-tabs v-if="isMobile" no-caps class="bg-transparent text-blue-500">
         <q-route-tab
           v-for="item in menu"

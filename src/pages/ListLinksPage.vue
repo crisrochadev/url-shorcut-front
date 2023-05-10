@@ -83,7 +83,7 @@
           </q-td>
         </template>
         <template #body-cell-buttons="props">
-          <q-td :props="props">
+          <q-td :props="props" v-if="!props.row.expired">
             <q-btn
               icon="content_copy"
               color="blue-5"
@@ -107,9 +107,10 @@
               </q-btn>
             </a>
           </q-td>
+          <q-td v-else></q-td>
         </template>
         <template #body-cell-delete="props">
-          <q-td :props="props">
+          <q-td :props="props" v-if="!props.row.expired">
             <q-btn
               :icon="props.row.disabled ? 'link' : 'link_off'"
               :color="props.row.disabled ? 'blue-5' : 'red-5'"
@@ -180,6 +181,7 @@
               </q-menu>
             </q-btn>
           </q-td>
+          <q-td v-else></q-td>
         </template>
       </q-table>
     </q-card>
