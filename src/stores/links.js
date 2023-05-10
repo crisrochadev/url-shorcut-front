@@ -43,6 +43,8 @@ export const useLinks = defineStore("links", {
         .get(endpoint)
         .then((res) => res.data)
         .catch((error) => error);
+
+      console.log(res);
       if (res.success) {
         this.links = res.shortcuts.data;
         this.pagination["page"] = res.shortcuts.current_page;

@@ -18,8 +18,8 @@ const getContext = () => {
 };
 
 let URL_CTX_API = getContext();
-console.log(context);
-console.log(URL_CTX_API);
+// console.log(context);
+// console.log(URL_CTX_API);
 const api = axios.create({
   baseURL: URL_CTX_API,
 });
