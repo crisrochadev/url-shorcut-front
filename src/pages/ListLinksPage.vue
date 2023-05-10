@@ -57,58 +57,63 @@
             >
           </q-td>
         </template>
-        <template #body-cell-expired="props">
-          <q-td dense>
-            <q-btn
-              v-if="props.row.expired"
-              icon="alarm"
-              round
-              dense
-              flat
-              title="Reativar Link"
-              color="orange-5"
-              @click="() => reactivateLink(props.row.id)"
-            >
-              <q-tooltip>Reativar link</q-tooltip>
-            </q-btn>
-          </q-td>
-        </template>
         <template #body-cell-link="props">
-          <q-td :props="props">
-            <shortcut-copy
-              :class="[props.row.expired ? 'line-through text-orange-500' : '']"
-              v-model:shortcut="props.value"
-              :disableCopy="true"
-            />
-          </q-td>
-        </template>
-        <template #body-cell-buttons="props">
-          <q-td :props="props" v-if="!props.row.expired">
-            <q-btn
-              icon="content_copy"
-              color="blue-5"
-              flat
-              round
-              dense
-              @click="() => copyShortcut(props.row.link)"
+          <q-td :props="props" class="flex justify-start items-center gap-2">
+            <div
+              class="flex flex-nowrap justify-between items-center gap-2 w-full"
             >
-              <q-tooltip>Copiar link</q-tooltip>
-            </q-btn>
-            <a :href="`/${props.row.slug}`" target="__blank">
               <q-btn
-                icon="open_in_new"
-                title="Copiar Link"
+                v-if="props.row.expired"
+                icon="alarm"
+                round
+                dense
+                flat
+                title="Reativar Link"
+                color="orange-5"
+                @click="() => reactivateLink(props.row.id)"
+              >
+                <q-tooltip>Reativar link</q-tooltip>
+              </q-btn>
+              <q-btn
+                v-if="!props.row.expired"
+                icon="content_copy"
                 color="blue-5"
                 flat
                 round
                 dense
+                @click="() => copyShortcut(props.value)"
               >
-                <q-tooltip>Testar Link</q-tooltip>
+                <q-tooltip>Copiar link</q-tooltip>
               </q-btn>
-            </a>
+              <div class="flex-1">
+                <shortcut-copy
+                  :class="[
+                    props.row.expired ? 'line-through text-orange-500' : '',
+                  ]"
+                  v-model:shortcut="props.value"
+                  :disableCopy="true"
+                />
+              </div>
+              <a
+                :href="`/${props.row.slug}`"
+                target="__blank"
+                v-if="!props.row.expired"
+              >
+                <q-btn
+                  icon="open_in_new"
+                  title="Copiar Link"
+                  color="blue-5"
+                  flat
+                  round
+                  dense
+                >
+                  <q-tooltip>Testar Link</q-tooltip>
+                </q-btn>
+              </a>
+            </div>
           </q-td>
-          <q-td v-else></q-td>
         </template>
+
         <template #body-cell-delete="props">
           <q-td :props="props" v-if="!props.row.expired">
             <q-btn
@@ -201,22 +206,6 @@ const header_table = ref(null);
 const columns = ref([
   {
     id: 1,
-    label: "",
-    name: "buttons",
-    align: "center",
-    style: "width:60px",
-    headerStyle: "width:60px",
-  },
-  {
-    id: 2,
-    label: "",
-    name: "expired",
-    style: "width:10px",
-    headerStyle: "width: 10px",
-    align: "center",
-  },
-  {
-    id: 3,
     label: "Link",
     name: "link",
     field: "link",
@@ -224,21 +213,21 @@ const columns = ref([
   },
 
   {
-    id: 4,
+    id: 2,
     label: "URL",
     field: "url",
     align: "left",
     sortable: true,
   },
   {
-    id: 5,
+    id: 3,
     label: "Slug",
     field: "slug",
     align: "left",
   },
 
   {
-    id: 6,
+    id: 4,
     label: "",
     name: "delete",
     align: "center",

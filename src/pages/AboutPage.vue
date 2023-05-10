@@ -3,7 +3,7 @@
     <q-card class="px-8 w-[90%] my-4">
       <q-card-section header>
         <h1 class="text-center uppercase text-blue-500 text-lg font-bold">
-          Documentação - Url Shorcut
+          Documentação do projeto - Url Shorcut
         </h1>
       </q-card-section>
       <h2 class="uppercase text-lg text-blue-500">
@@ -117,8 +117,7 @@
       >
         O back-end do projeto foi desenvolvido utilizando Laravel. A biblioteca
         Hashids foi utilizada para criar os slugs encurtados dos links. O
-        projeto foi dividido em controllers, repositories e models, e consiste
-        apenas de uma API, sem views.
+        projeto foi dividido em controllers, repositories e models.
       </p>
 
       <h3 class="text-grey-800 uppercase">

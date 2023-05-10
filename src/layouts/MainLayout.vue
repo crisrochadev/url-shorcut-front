@@ -7,13 +7,14 @@
   >
     <q-header class="bg-white px-4">
       <q-toolbar>
-        <q-avatar>
-          <img src="../assets/logo.svg" />
-        </q-avatar>
-
-        <q-toolbar-title class="uppercase font-extrabold text-blue-500"
-          >Url Shortcut</q-toolbar-title
+        <q-toolbar-title
+          class="uppercase font-extrabold text-blue-500 text-center md:text-left"
         >
+          <q-avatar class="mr-2">
+            <img src="../assets/logo.svg" />
+          </q-avatar>
+          <span>Url Shortcut</span>
+        </q-toolbar-title>
 
         <q-tabs v-if="!isMobile" no-caps class="bg-transparent text-blue-500">
           <q-route-tab
@@ -26,9 +27,6 @@
           />
         </q-tabs>
       </q-toolbar>
-    </q-header>
-
-    <q-footer class="bg-white fixed bottom-0" elevated>
       <q-tabs v-if="isMobile" no-caps class="bg-transparent text-blue-500">
         <q-route-tab
           v-for="item in menu"
@@ -37,10 +35,9 @@
           replace
           :label="item.label"
           class="uppercase"
-          active-class="bg-blue-5 text-white"
         />
       </q-tabs>
-    </q-footer>
+    </q-header>
     <q-page-container>
       <router-view :key="$route.path" />
     </q-page-container>
