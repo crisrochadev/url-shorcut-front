@@ -68,7 +68,7 @@
           class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
         >
           Redirecionamento -
-          <code class="ml-1">/redirect/:slug</code>
+          <code class="ml-1">/:slug</code>
         </li>
       </ul>
 
