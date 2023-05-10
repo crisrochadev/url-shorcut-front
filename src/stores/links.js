@@ -44,14 +44,14 @@ export const useLinks = defineStore("links", {
         .then((res) => res.data)
         .catch((error) => error);
 
-      console.log(res);
+      // console.log(res);
       if (res.success) {
         this.links = res.shortcuts.data;
         this.pagination["page"] = res.shortcuts.current_page;
         this.pagination["rowsPerPage"] = res.shortcuts.per_page;
         this.pagination["rowsNumber"] = res.shortcuts.total;
       } else {
-        console.log(res);
+        // console.log(res);
         //implementar notify ?
       }
 
@@ -63,7 +63,7 @@ export const useLinks = defineStore("links", {
         .put("/links/reactivate/" + id)
         .then((res) => res.data)
         .catch((error) => error);
-      console.log(res);
+      // console.log(res);
       if (res.success) {
         await this.getAllLinks();
         this.loading = false;
@@ -85,7 +85,7 @@ export const useLinks = defineStore("links", {
         .post("/links", { url })
         .then((res) => res.data)
         .catch((error) => error);
-      console.log(res);
+      // console.log(res);
       if (res.success) {
         await this.getAllLinks();
         return { slug: res.data.slug, success: true };

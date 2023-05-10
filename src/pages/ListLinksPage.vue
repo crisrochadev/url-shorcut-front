@@ -248,7 +248,7 @@ const typeLinkList = computed({
 
 async function onRequest(props) {
   const filter = props.filter;
-  console.log(props.pagination);
+  // console.log(props.pagination);
   await store.setPagination(props.pagination, filter);
 }
 onMounted(async () => {

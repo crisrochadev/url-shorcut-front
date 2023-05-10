@@ -81,7 +81,7 @@ async function shortenUrl() {
     message.value = "Por favor, cole ou digite uma url.";
   }
   const res = await store.createLink(url.value);
-  console.log(res);
+  // console.log(res);
   if (res.success) {
     shortcut.value = window.location.origin + "/" + res.slug;
     urlWasShortened.value = true;

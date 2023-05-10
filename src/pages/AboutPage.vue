@@ -20,7 +20,7 @@
 
       <h3 class="text-grey-800 uppercase">
         <q-icon name="keyboard_command_key" class="mr-4" />
-        <span>Commandos</span>
+        <span>Comandos</span>
       </h3>
       <pre
         class="bg-gray-800 text-white pt-1 w-[300px] rounded shadow-md h-8 mb-2"
@@ -40,25 +40,35 @@
       </h3>
       <hr />
       <ul class="my-4">
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /> Início -
-          <code>/</code>
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          Início -
+          <code class="ml-1">/</code>
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /> Criar um novo link -
-          <code>/create-link</code>
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          Criar um novo link -
+          <code class="ml-1">/create-link</code>
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /> Listagem dos links -
-          <code>/link-list</code>
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          Listagem dos links -
+          <code class="ml-1">/link-list</code>
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /> Documentação -
-          <code>/documentation</code>
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          Documentação -
+          <code class="ml-1">/documentation</code>
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /> Redirecionamento -
-          <code>/redirect/:slug</code>
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          Redirecionamento -
+          <code class="ml-1">/redirect/:slug</code>
         </li>
       </ul>
 
@@ -125,67 +135,82 @@
         <span>Funcionalidades</span>
       </h3>
       <hr />
-      <ul class="mt-4">
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /> Criar um link com
-          data de expiração de 7 dias
+      <ul class="my-4">
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          Criar um link com data de expiração de 7 dias
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /> Listar os links não
-          desativados
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          Listar os links não desativados
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /> Listar os links
-          ativados
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          Listar os links ativados
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /> Reativar um link
-          expirado
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          Reativar um link expirado
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" />
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
           Buscar um link pelo slug (retorna apenas links ativos e não expirados)
         </li>
       </ul>
 
       <h3 class="text-grey-800 uppercase">
         <q-icon name="fas fa-database" class="mr-4" />
-        <span>Funcionalidades</span>
+        <span>Banco de Dados</span>
       </h3>
       <hr />
-      <p class="mt-4">
+      <p class="my-4">
         O projeto utiliza um banco de dados MySQL com uma tabela que possui as
         seguintes colunas:
       </p>
-      <ul class="mt-4">
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /><code>id</code> - ID
-          do link (auto incremento)
+      <ul class="my-4">
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:mr-2"
+        >
+          <code class="ml-1">id</code> - ID do link (auto incremento)
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /><code>url</code> - URL
-          do link (string)
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          <code class="ml-1">url</code> - URL do link (string)
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" /><code>slug</code> -
-          Slug encurtado do link (string)
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          <code class="ml-1">slug</code> - Slug encurtado do link (string)
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" />
-          <code>expired_date</code> - Data de expiração do link (datetime)
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          <code class="ml-1">expired_date</code> - Data de expiração do link
+          (datetime)
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" />
-          <code>deleted_at</code> - Data de exclusão (soft delete do Laravel)
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          <code class="ml-1">deleted_at</code> - Data de exclusão (soft delete
+          do Laravel)
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" />
-          <code>updated_at</code> - Data de atualização (automática pelo
-          Laravel)
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          <code class="ml-1">updated_at</code> - Data de atualização (automática
+          pelo Laravel)
         </li>
-        <li class="flex justify-start items-center">
-          <q-icon name="circle" size="8px" class="mr-4" />
-          <code>created_at</code> - Data de criação (automática pelo Laravel)
+        <li
+          class="flex justify-start items-center before:content-['♦'] before:inline-block before:mr-2"
+        >
+          <code class="ml-1">created_at</code> - Data de criação (automática
+          pelo Laravel)
         </li>
       </ul>
       <h2 class="uppercase text-grey-800">

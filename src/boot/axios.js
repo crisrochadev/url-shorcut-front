@@ -9,7 +9,7 @@ import axios from "axios";
 // for each client)
 let context = window.location.hostname;
 const getContext = () => {
-  console.log("DEBUG LOGIN", process.env.VUE_APP_TENANT_NAME);
+  // console.log("DEBUG LOGIN", process.env.VUE_APP_TENANT_NAME);
   if (context.indexOf("localhost") >= 0) {
     return process.env.VUE_APP_API_URL_DEV;
   } else {
@@ -18,8 +18,8 @@ const getContext = () => {
 };
 
 let URL_CTX_API = getContext();
-// console.log(context);
-// console.log(URL_CTX_API);
+// // console.log(context);
+// // console.log(URL_CTX_API);
 const api = axios.create({
   baseURL: URL_CTX_API,
 });
